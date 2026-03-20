@@ -1,0 +1,50 @@
+PROJECT_NAME           = "DACEx"
+PROJECT_BRIEF          = "Differential Algebra Chebyshev Extensions"
+PROJECT_NUMBER         = "main"
+OUTPUT_DIRECTORY       = _docs
+CREATE_SUBDIRS         = NO
+
+INPUT                  = include/dacex docs/mainpage.md README.md
+FILE_PATTERNS          = *.h *.md
+RECURSIVE              = YES
+EXCLUDE                =
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = NO
+EXTRACT_LOCAL_CLASSES  = YES
+HIDE_UNDOC_MEMBERS     = NO
+HIDE_UNDOC_CLASSES     = NO
+
+OPTIMIZE_OUTPUT_FOR_C  = NO
+OPTIMIZE_OUTPUT_JAVA   = NO
+OPTIMIZE_FOR_FORTRAN   = NO
+OPTIMIZE_OUTPUT_VHDL   = NO
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+HTML_FILE_EXTENSION    = .html
+HTML_COLORSTYLE        = LIGHT
+HTML_DYNAMIC_MENUS     = YES
+HTML_TIMESTAMP         = YES
+
+GENERATE_LATEX         = NO
+GENERATE_XML           = NO
+GENERATE_RTF           = NO
+GENERATE_MAN           = NO
+GENERATE_DOCBOOK       = NO
+
+JAVADOC_AUTOBRIEF      = YES
+QT_AUTOBRIEF           = NO
+MULTILINE_CPP_IS_BRIEF = YES
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+
+QUIET                  = YES
+
+USE_MDFILE_AS_MAINPAGE = docs/mainpage.md
+STRIP_FROM_PATH        = .

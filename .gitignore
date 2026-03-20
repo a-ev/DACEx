@@ -1,0 +1,36 @@
+# Build directories
+_build/
+build/
+dace-master/build/
+
+# Python virtual environment
+.venv_py/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+*.o
+*.a
+*.so
+*.dll
+*.exe
+*.out
+
+# Generated outputs from examples
+data_out/
+
+# CMake
+CMakeUserPresets.json
