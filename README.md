@@ -1,6 +1,6 @@
 # DACEx
 
-DACEx extends DACE with additional polynomial-family support and example/test programs.
+DACEx extends the [DACE](https://github.com/dacelib/dace) library to additional polynomial families.
 
 ## Requirements
 
@@ -10,13 +10,13 @@ DACEx extends DACE with additional polynomial-family support and example/test pr
 
 ## DACE Setup
 
-DACEx depends on DACE. A common workflow is:
+DACEx depends on [DACE](https://github.com/dacelib/dace). You can build DACE as per the instructions on the Wiki:
 
 ```bash
 git clone https://github.com/dacelib/dace.git dace
 cmake -S dace -B dace-build
 cmake --build dace-build
-cmake --install dace-build   # optional
+cmake --install dace-build
 ```
 
 ## First-Time Build (Recommended)
