@@ -1,4 +1,4 @@
 # Authors
 
-- Adam Evans (a-ev, aeva686@aucklanduni.ac.nz)
+- Adam Evans (a-ev, adam.evans@auckland.ac.nz)
 
