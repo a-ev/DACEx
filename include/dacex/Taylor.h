@@ -198,6 +198,47 @@ public:
      */
     friend Polynomial<Taylor> operator/(const double c, const Polynomial<Taylor> &p);
 
+    /** @brief Evaluate at polynomial-vector arguments.
+     * @param args Algebraic-vector argument values.
+     * @return Evaluated Taylor polynomial.
+     */
+    Polynomial<Taylor> eval(const DACE::AlgebraicVector<Polynomial<Taylor>>& args) const;
+    /** @brief Evaluate at numeric algebraic-vector arguments.
+     * @param args Numeric argument values.
+     * @return Evaluated scalar value.
+     */
+    double eval(const DACE::AlgebraicVector<double>& args) const;
+    /** @brief Evaluate at numeric vector arguments.
+     * @param args Numeric argument values.
+     * @return Evaluated scalar value.
+     */
+    double eval(const std::vector<double>& args) const;
+    /** @brief Evaluate with generic vector arguments.
+     * @tparam T Evaluation scalar type.
+     * @param args Input argument vector.
+     * @return Evaluated value in type T.
+     */
+    template<class T> T eval(const std::vector<T> &args) const {
+        return m_da.eval(args);
+    }
+    /** @brief Evaluate with generic array arguments.
+     * @tparam T Evaluation scalar type.
+     * @param args Input argument array.
+     * @param length Number of array elements.
+     * @return Evaluated value in type T.
+     */
+    template<class T> T eval(const T args[], const unsigned int length) const {
+        return m_da.eval(args, length);
+    }
+    /** @brief Evaluate a single-variable polynomial.
+     * @tparam T Evaluation scalar type.
+     * @param arg Input scalar argument.
+     * @return Evaluated value in type T.
+     */
+    template<class T> T evalScalar(const T &arg) const {
+        return m_da.evalScalar(arg);
+    }
+
     /** @brief Multiply matching monomials coefficient-wise.
      * @param p Right-hand side polynomial.
      * @return Product polynomial.

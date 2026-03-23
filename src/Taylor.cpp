@@ -31,6 +31,26 @@ DACE::AlgebraicVector<Polynomial<Taylor>> Polynomial<Taylor>::gradient() const {
     return result;
 }
 
+Polynomial<Taylor> Polynomial<Taylor>::eval(const DACE::AlgebraicVector<Polynomial<Taylor>>& args) const {
+    std::vector<DACE::DA> da_args(args.size());
+    for (size_t i = 0; i < args.size(); ++i) {
+        da_args[i] = *args[i].getDA();
+    }
+    return Polynomial<Taylor>(m_da.eval(da_args));
+}
+
+double Polynomial<Taylor>::eval(const DACE::AlgebraicVector<double>& args) const {
+    std::vector<double> std_args(args.size());
+    for (size_t i = 0; i < args.size(); ++i) {
+        std_args[i] = args[i];
+    }
+    return m_da.eval(std_args);
+}
+
+double Polynomial<Taylor>::eval(const std::vector<double>& args) const {
+    return m_da.eval(args);
+}
+
 
 
 Polynomial<Taylor>& Polynomial<Taylor>::operator=(Polynomial<Taylor> &&p) noexcept {
