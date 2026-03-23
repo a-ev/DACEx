@@ -1,6 +1,6 @@
 # DACEx
 
-DACEx extends DACE with additional polynomial-family support and example/test programs.
+DACEx extends the [DACE](https://github.com/dacelib/dace) library to additional polynomial families.
 
 ## Requirements
 
@@ -10,16 +10,18 @@ DACEx extends DACE with additional polynomial-family support and example/test pr
 
 ## DACE Setup
 
-DACEx depends on DACE. A common workflow is:
+DACEx depends on [DACE](https://github.com/dacelib/dace). You can build DACE as per the instructions on the Wiki:
 
 ```bash
 git clone https://github.com/dacelib/dace.git dace
 cmake -S dace -B dace-build
 cmake --build dace-build
-cmake --install dace-build   # optional
+cmake --install dace-build
 ```
 
 ## First-Time Build (Recommended)
+
+Build is currently only configured for windows.
 
 ### Windows (Visual Studio 2022, x64)
 
@@ -38,22 +40,7 @@ Run examples:
 .\_build\bin\Debug\DACEx_Gaussian_2D_example.exe
 ```
 
-### Linux / macOS (Ninja or Make)
-
-```bash
-rm -rf _build
-cmake -S . -B _build -DCMAKE_BUILD_TYPE=Debug
-cmake --build _build -j
-```
-
-Run examples:
-
-```bash
-./_build/bin/DACEx_Gaussian_example
-./_build/bin/DACEx_Gaussian_2D_example
-```
-
-## How DACE Discovery Works
+## DACE Discovery Notes
 
 DACEx tries, in order:
 
@@ -61,13 +48,6 @@ DACEx tries, in order:
 2. Common local roots such as `~/dace-install` and `~/dace-build`
 3. Manual overrides via CMake cache variables
 
-Useful overrides:
-
-- `-Ddace_DIR=<path containing daceConfig.cmake>`
-- `-DCMAKE_PREFIX_PATH=<dace install prefix>`
-- `-DDACEX_DACE_ROOT=<dace root with include/ and lib/>`
-- `-DDACEX_DACE_INCLUDE_DIR=<dir containing dace/dace.h>`
-- `-DDACEX_DACE_LIBRARY=<full path to dace library file>`
 
 ## Notes
 
@@ -76,12 +56,6 @@ Useful overrides:
 
 ## License
 
-DACEx is open source and licensed under the Apache License 2.0. See `LICENSE`.
-
-Copyright ownership is retained by the project author:
-
-- Copyright (c) 2026 Adam Evans (@a-ev)
-
-Attribution and ownership details are also captured in `NOTICE` and `AUTHORS.md`.
+DACEx is open source and licensed under the Apache License 2.0. See `LICENSE`. Attribution and ownership details are also captured in `NOTICE` and `AUTHORS.md`.
 
 
